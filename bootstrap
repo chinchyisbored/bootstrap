@@ -1,0 +1,41 @@
+#!/bin/bash
+#Get sudo early...
+sudo -v
+
+#Import Scripts. They are named so their import order is correct.
+for script in "${HOME}/.config/yadm/bootstrap.d/"*.sh; do
+	if [[ -r "$script" ]]; then
+		# shellcheck source=/dev/null
+		source "$script"
+	else
+		echo "Error: Cannot source '$script' - file not readable"
+	fi
+done
+
+##Main
+print_asci
+echo ""
+apt_update_upgrade
+echo ""
+update_git
+echo ""
+install_small_apt_tools
+echo ""
+install_docker
+echo ""
+install_terraform
+echo ""
+install_azure_cli
+echo ""
+install_vscode_extensions
+echo ""
+install_zsh
+install_omz
+install_omz_plugins
+echo ""
+install_pyenv
+install_python_builddep
+install_python_version
+echo ""
+set_zsh_default
+switch_to_zsh
