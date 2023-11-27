@@ -1,6 +1,9 @@
 # Dotfiles and Bootstrap
 
-Dotfiles & Bootstrap Script for a WSL 2 Ubuntu development environment.
+This is my old Bootstrap Script for a WSL 2 Ubuntu development environment and was used in conjunction with (yadm)[https://yadm.io/#].
+It has since been superseded by an alternative implementation with ansible, but is still very much functioning.
+
+The main features of this script are idempotence, logging and cool looking terminal responses are achieved by moving the cursor.
 
 ## Includes: ##
 
